@@ -19,6 +19,9 @@ provider "azurerm" {
   features {}
   subscription_id = "55f61365-73d4-47a7-a591-631e3ce0d8de"
 }
+variable "storage_name"{
+type= string
+}
 
 resource "azurerm_resource_group" "example" {
   name     = "example-resources"
@@ -27,7 +30,7 @@ resource "azurerm_resource_group" "example" {
 
 resource "azurerm_storage_account" "example" {
  
-  name                     = "gahaneromnathstz"
+  name                     = "var.storage_name"
   resource_group_name      = azurerm_resource_group.example.name
   location                 = azurerm_resource_group.example.location # implicit dependency
   account_tier             = "Standard"
