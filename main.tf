@@ -15,9 +15,6 @@ provider "azurerm" {
   
 }
 
-#variable "storage_account_name" {
-#type = string
-#}
 
 resource "azurerm_resource_group" "example" {
   name     = "example-resources"
